@@ -114,6 +114,20 @@ while run:
         if sprite.spritecollide(raketka,nlos,False) or lost>=3:
             finish=True
             window.blit(losetext,(150,150 ))
+    else:
+        finish=False
+        score=0
+        lost=0
+        for b in pylka1:
+            b.kill()
+        for b in nlos:
+            b.kill()
+        time.delay(3000)
+        for i in range(5):
+            nlo= Enemy('ufo.png',randint(1,3),randint(50,450,),0,90,60)
+            nlos.add(nlo)
+
+        
             
 
     display.update()
